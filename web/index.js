@@ -5,7 +5,7 @@ var app = express();
 app.use(morgan('combined'));
 
 app.get('/', function (req, res) {
-    res.send('Hello World!');
+    res.send('Hello World, I\'m doing '+env+' here!');
 });
 
 app.listen(3000, function () {
