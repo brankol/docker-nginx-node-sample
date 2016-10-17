@@ -2,7 +2,7 @@ version: '2'
 services:
   web:
     environment:
-    - NODE_ENV=prod
+    - NODE_ENV=production
   app:
     environment:
-    - NODE_ENV=prod
+    - NODE_ENV=production

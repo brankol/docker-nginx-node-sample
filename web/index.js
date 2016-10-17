@@ -1,7 +1,8 @@
 var express = require('express');
 var morgan = require('morgan');
 var app = express();
-    env = process.env.NODE_ENV;
+var env = process.env.NODE_ENV;
+
 app.use(morgan('combined'));
 
 app.get('/', function (req, res) {
