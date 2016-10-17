@@ -1,24 +1,24 @@
 # Docker with Nginx, Node and PM2
 
 Usage:
-    
+
     # install dependencies, might be moved to build too
     npm install
-    
-    # build images 
-    npm run-script build
-    
+
+    # build images
+    npm run build
+
     # run a dev instance
     # WILL mount local files (and pm2 will --watch the changes to restart)
-    npm run-script dev
-    
+    npm run dev
+
     # figure out your IP
-    npm run-script ip
-    
+    npm run ip
+
     # run a prod instance
     # WILL NOT mount local files, only uses files embedded in the images
-    npm run-script prod
-    
+    npm run prod
+
     # monitor logs stream
-    npm run-script logs
+    npm run logs
 

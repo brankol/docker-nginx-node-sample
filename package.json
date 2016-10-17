@@ -18,8 +18,7 @@
   "keywords": [
     "docker",
     "nginx",
-    "node",
-    "nvm"
+    "node"
   ],
   "author": "Dalibor Karlović",
   "license": "MIT",
