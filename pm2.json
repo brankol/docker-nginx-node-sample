@@ -1,20 +1,24 @@
 {
-  apps : [
+  "apps" : [
     {
-      name       : "app_development",
-      script     : "./web/index.js",
-      watch      : true,
-      env: {
-        "NODE_ENV" : "development",
+      "name"       : "app_development",
+      "script"     : "./web/www",
+      "watch"      : true,
+      "env": {
+        "PORT"     : 3000,
+        "NODE_ENV" : "development"
       }
     },
     {
-      name       : "app_production",
-      script     : "./web/index.js",
-      instances  : 2,
-      exec_mode  : "cluster",
-      env: {
-        "NODE_ENV" : "production",
+      "name"       : "app_production",
+      "script"     : "./web/www",
+      "instances"  : 2,
+      "max_restarts": 20,
+      "max_memory_restart": "200M",
+      "exec_mode"  : "cluster",
+      "env": {
+        "PORT"     : 3000,
+        "NODE_ENV" : "production"
       }
     }
   ]
