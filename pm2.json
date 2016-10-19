@@ -2,7 +2,7 @@
   apps : [
     {
       name       : "app_development",
-      script     : "/app/web/index.js",
+      script     : "./web/index.js",
       watch      : true,
       env: {
         "NODE_ENV" : "development",
@@ -10,7 +10,7 @@
     },
     {
       name       : "app_production",
-      script     : "/app/web/index.js",
+      script     : "./web/index.js",
       instances  : 2,
       exec_mode  : "cluster",
       env: {

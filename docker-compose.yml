@@ -1,7 +1,7 @@
 version: '2'
 services:
   web:
-    image: dkarlovi/node-web
+    image: brankol/node-web
     build:
       context: .
       dockerfile: ./.docker/nginx/Dockerfile
@@ -10,7 +10,7 @@ services:
     ports:
     - '80:80'
   app:
-    image: dkarlovi/node-app
+    image: brankol/node-app
     build:
       context: .
       dockerfile: ./.docker/node/Dockerfile
