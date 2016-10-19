@@ -2,9 +2,6 @@
 
 Usage:
 
-    # install dependencies, might be moved to build too
-    npm install
-
     # build images
     npm run build
 
@@ -21,4 +18,3 @@ Usage:
 
     # monitor logs stream
     npm run logs
-

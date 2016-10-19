@@ -1,12 +1,15 @@
 FROM mhart/alpine-node:latest
 WORKDIR /app
 
+# Add our package.json and install *before* adding our application files
+COPY ./package.json /app/
+RUN npm install
+
 RUN npm install -g pm2
 
 # copy all the relevant application content to the image
 # order is important here, you want folders which are least likely
 # to change and/or largest on top (b/c cache)
-COPY ./node_modules /app/node_modules
 COPY ./src /app/src
 COPY ./web/index.js /app/web/
 COPY ./pm2.json /app/
