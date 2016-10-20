@@ -1,0 +1,30 @@
+image: docker:latest
+
+services:
+  - docker:dind
+
+stages:
+  - build
+  - test
+  - clean
+
+before_script:
+  - docker login -u gitlab-ci-token -p "$CI_BUILD_TOKEN" $CI_REGISTRY
+  - docker info
+
+build:
+  stage: build
+  script:
+    - docker-compose build
+
+test:
+  stage: test
+  script:
+    - docker-compose run --rm app sh -c 'npm test -s'
+
+clean:
+  stage: clean
+  script:
+    - docker-compose stop
+    - docker-compose down
+    - docker-compose rm -f
