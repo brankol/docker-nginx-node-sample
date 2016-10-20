@@ -1,7 +1,7 @@
 version: '2'
 services:
   web:
-    image: brankol/node-web
+    image: "registry.gitlab.com/ender/docker-nginx-node-sample:node-web-${COMMIT_ID}"
     build:
       context: .
       dockerfile: ./.docker/nginx/Dockerfile
@@ -10,7 +10,7 @@ services:
     ports:
     - '80:80'
   app:
-    image: brankol/node-app
+    image: "registry.gitlab.com/ender/docker-nginx-node-sample:node-app-${COMMIT_ID}"
     build:
       context: .
       dockerfile: ./.docker/node/Dockerfile

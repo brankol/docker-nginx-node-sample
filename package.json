@@ -5,11 +5,11 @@
   "main": "./web/www",
   "scripts": {
     "test": "NODE_ENV=production node ./web/app.test.js",
-    "build": "docker-compose build",
+    "build": "COMMIT_ID=`git rev-parse HEAD` docker-compose build",
     "ip": "docker inspect --format='{{.Name}} - {{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' dockernginxnodesample_web_1",
     "logs": "docker-compose logs -f",
-    "dev": "docker-compose -f docker-compose.yml -f .docker/docker-compose.dev.yml up -d",
-    "prod": "docker-compose -f docker-compose.yml -f .docker/docker-compose.prod.yml up -d",
+    "dev": "COMMIT_ID=`git rev-parse HEAD` docker-compose -f docker-compose.yml -f .docker/docker-compose.dev.yml up -d",
+    "prod": "COMMIT_ID=`git rev-parse HEAD` docker-compose -f docker-compose.yml -f .docker/docker-compose.prod.yml up -d",
     "halt": "docker-compose down"
   },
   "repository": {
